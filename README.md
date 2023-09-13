@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Bud - Your Personal Budget Tracker
 ## Problem Statement
 Many people struggle with managing their finances effectively. They often find themselves in situations where they run out of money without realizing it until it's too late. This lack of financial awareness can lead to financial stress and challenges.
@@ -44,6 +43,3 @@ Bud is your ultimate solution to track your money efficiently and avoid unexpect
 - **Security: We prioritize the security of your financial data, employing robust encryption and privacy measures.
 - **Accessibility**: Bud is accessible from any device with an internet connection, making it easy to manage your finances on the go.
 - **Budgeting Made Easy**: Our app simplifies budgeting, so you can focus on what matters most—your financial well-being.
-
-## Start Using Bud$
-```script to usage```
