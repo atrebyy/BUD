@@ -128,7 +128,7 @@ Dashboard
     </div>
   </div>
   <div class="col">
-    <form action="/dashboard" method="post">
+    <form action="/dashboard" method="post" novalidate>
       <select id="type" name="option" class="form-select" onchange="handleTypeChange()">
         <option selected disabled>OPTION</option>
         {% for option in options %}

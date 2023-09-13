@@ -206,6 +206,10 @@ def change_password():
             flash("Invalid current password.")
             return redirect("/change_password")
         
+        if new_password == current_password:
+            flash("Please choose a new passowrd that is different from you current password.")
+            return redirect("/change_password")
+        
         if not is_strong_password(new_password):
             flash("Your new password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.")
             return redirect("/change_password")
