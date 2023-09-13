@@ -36,7 +36,6 @@ SecretStorage==3.3.1
 six==1.16.0
 SQLAlchemy==1.4.46
 sqlparse==0.4.4
-systemd-python==234
 termcolor==2.3.0
 tzlocal==5.0.1
 ubuntu-advantage-tools==8001
