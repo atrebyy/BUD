@@ -12,9 +12,14 @@ Bud is your ultimate solution to track your money efficiently and avoid unexpect
 1. User-Friendly Dashboard
   - A clean and intuitive dashboard that provides an overview of your financial status at a glance.
   - Easily see your total income, expenses, assets and liabilities.
-2. Transaction History
   - Maintain a detailed transaction history that includes: income, expenses, assets and liabilities.
   - Quickly refer to past financial activities.
+  - Clear all financial activities.
+
+2. Profile
+  - View and edit profile.
+  - Change password.
+  - Delete account.
   
 #### Getting Started with Bud
 1. **Register**: Create your Bud account with a unique and secure username and password.
@@ -24,5 +29,10 @@ Bud is your ultimate solution to track your money efficiently and avoid unexpect
 - **Accessibility**: Bud is accessible from any device with an internet connection, making it easy to manage your finances on the go.
 - **Budgeting Made Easy**: Our app simplifies budgeting, so you can focus on what matters most—your financial well-being.
 - **User-Focused**: Bud is designed with a user-centric approach, ensuring a seamless and enjoyable budgeting experience.
-- **Security: We prioritize the security of your financial data, employing robust encryption and privacy measures.
+- **Security**: We prioritize the security of your financial data, employing robust encryption and privacy measures.
 - **Comprehensive**: Bud covers all aspects of personal finance.
+
+#### Technology used
+- Frontend: HTML, CSS, and JavaScript - Bootstrap
+- Backend: Python - Flask
+- Database: SQL - sqlite3
