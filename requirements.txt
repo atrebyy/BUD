@@ -4,7 +4,6 @@ cachelib==0.10.2
 certifi==2023.7.22
 charset-normalizer==3.2.0
 click==8.1.7
-command-not-found==0.3
 cryptography==3.4.8
 cs50==9.2.5
 dbus-python==1.2.18
