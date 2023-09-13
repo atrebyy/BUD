@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B U D</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      overflow: hidden;
+      background-color: black;
+    }
+
+    .hero-banner {
+      padding-top: 150px;
+      padding-bottom: 150px;
+      text-align: center;
+    }
+
+    .hero-text {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h1 class="hero-text">Welcome to</h1>
+          <svg width="150px" height="150px" xmlns="http://www.w3.org/2000/svg"
+            viewBox="32.493750000000006 -32.8 435.0125 215.6" style="background: none;" preserveAspectRatio="xMidYMid">
+            <defs>
+              <filter id="editing-neon" x="-100%" y="-100%" width="300%" height="300%">
+                <feFlood flood-color="#14a651" result="flood"></feFlood>
+                <feComposite operator="in" in="flood" in2="SourceAlpha" result="color"></feComposite>
+                <feFlood flood-color="#14a651" result="flood2"></feFlood>
+                <feComposite operator="in" in="flood2" in2="SourceAlpha" result="color2"></feComposite>
+                <feMorphology operator="dilate" radius="2" in="color" result="dilate"></feMorphology>
+                <feGaussianBlur stdDeviation="6" in="color" result="blur1"></feGaussianBlur>
+                <feGaussianBlur stdDeviation="2.5" in="color" result="blur2"></feGaussianBlur>
+                <feGaussianBlur stdDeviation="1" in="SourceAlpha" result="blur3"></feGaussianBlur>
+                <feGaussianBlur stdDeviation="6" in="dilate" result="blur4"></feGaussianBlur>
+                <feConvolveMatrix in="color2" result="conv" order="3,3" divisor="1" kernelMatrix="1 1 1  1 1 1  1 1 1">
+                </feConvolveMatrix>
+                <feMerge>
+                  <feMergeNode in="blur1"></feMergeNode>
+                  <feMergeNode in="blur2"></feMergeNode>
+                  <feMergeNode in="blur4"></feMergeNode>
+                  <feMergeNode in="blur3"></feMergeNode>
+                  <feMergeNode in="blur3"></feMergeNode>
+                  <feMergeNode in="blur3"></feMergeNode>
+                  <feMergeNode in="blur3"></feMergeNode>
+                  <feMergeNode in="conv"></feMergeNode>
+                  <feMergeNode in="SourceGraphic"></feMergeNode>
+                </feMerge>
+              </filter>
+            </defs>
+            <g filter="url(#editing-neon)">
+              <g transform="translate(96.83499050140381, 118.21500158309937)">
+                <path
+                  d="M65.51-43.83L65.51-43.83L65.51-43.83Q68.14-43.01 70.31-41.48L70.31-41.48L70.31-41.48Q72.48-39.96 74.00-37.59L74.00-37.59L74.00-37.59Q75.53-35.21 76.35-31.99L76.35-31.99L76.35-31.99Q77.17-28.77 77.17-24.61L77.17-24.61L77.17-20.39L77.17-20.39Q77.17 0 56.78 0L56.78 0L10.78 0L10.78-84.02L54.38-84.02L54.38-84.02Q74.77-84.02 74.77-63.57L74.77-63.57L74.77-62.05L74.77-62.05Q74.77-54.96 72.51-50.48L72.51-50.48L72.51-50.48Q70.25-46.00 65.51-43.83ZM56.43-36.62L22.56-36.62L22.56-11.78L56.43-11.78L56.43-11.78Q61.17-11.78 63.28-14.00L63.28-14.00L63.28-14.00Q65.39-16.23 65.39-20.98L65.39-20.98L65.39-27.48L65.39-27.48Q65.39-32.29 63.28-34.45L63.28-34.45L63.28-34.45Q61.17-36.62 56.43-36.62L56.43-36.62ZM54.02-72.25L22.56-72.25L22.56-48.34L54.84-48.34L54.84-48.34Q59.18-48.52 61.08-50.71L61.08-50.71L61.08-50.71Q62.99-52.91 62.99-57.48L62.99-57.48L62.99-62.99L62.99-62.99Q62.99-67.79 60.88-70.02L60.88-70.02L60.88-70.02Q58.77-72.25 54.02-72.25L54.02-72.25ZM129.96-11.54L129.96-62.40L141.45-62.40L141.45-11.54L173.61-11.54L173.61-62.40L185.16-62.40L185.16 0L173.61 0L173.61-10.55L173.61-10.55Q173.44-8.38 172.44-6.45L172.44-6.45L172.44-6.45Q171.45-4.51 169.89-3.08L169.89-3.08L169.89-3.08Q168.34-1.64 166.35-0.82L166.35-0.82L166.35-0.82Q164.36 0 162.13 0L162.13 0L141.45 0L141.45 0Q139.10 0 136.99-0.91L136.99-0.91L136.99-0.91Q134.88-1.82 133.33-3.37L133.33-3.37L133.33-3.37Q131.78-4.92 130.87-7.03L130.87-7.03L130.87-7.03Q129.96-9.14 129.96-11.54L129.96-11.54ZM240.35-11.54L240.35-50.86L240.35-50.86Q240.35-53.26 241.26-55.37L241.26-55.37L241.26-55.37Q242.17-57.48 243.72-59.03L243.72-59.03L243.72-59.03Q245.27-60.59 247.38-61.49L247.38-61.49L247.38-61.49Q249.49-62.40 251.84-62.40L251.84-62.40L284.00-62.40L284.00-86.43L295.55-86.43L295.55 0L284.00 0L284.00-10.55L284.00-10.55Q283.83-8.38 282.83-6.45L282.83-6.45L282.83-6.45Q281.84-4.51 280.28-3.08L280.28-3.08L280.28-3.08Q278.73-1.64 276.74-0.82L276.74-0.82L276.74-0.82Q274.75 0 272.52 0L272.52 0L251.84 0L251.84 0Q249.49 0 247.38-0.91L247.38-0.91L247.38-0.91Q245.27-1.82 243.72-3.37L243.72-3.37L243.72-3.37Q242.17-4.92 241.26-7.03L241.26-7.03L241.26-7.03Q240.35-9.14 240.35-11.54L240.35-11.54ZM251.84-50.86L251.84-11.54L284.00-11.54L284.00-50.86L251.84-50.86Z"
+                  fill="none" stroke="#c5ffe2" stroke-width="1.5"></path>
+              </g>
+            </g>
+            <style>
+              text {
+                font-size: 32px;
+                font-family: Arial Black;
+                text-anchor: middle;
+                text-align: center;
+              }
+            </style>
+          </svg>
+          <p class="lead"><strong>Manage your finances with ease and accuracy.</strong></p>
+          <p class="lead">At BUD, we prioritize the safety and security of your financial data. Our app
+            utilizes strict encryption protocols and ensures your privacy.</p>
+          <form action="/register" method="post"><button class="btn btn-primary" type="submit">Get Started</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

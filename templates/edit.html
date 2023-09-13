@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Edit Account
+{% endblock %}
+
+{% block main %}
+
+<form action="/edit" method="post" class="row g-3 needs-validation">
+
+  <div class="col-md-16">
+    <label for="validationCustom01" class="form-label">First name</label>
+    <input type="text" class="form-control" id="validationCustom01" name="first_name" value="{{ first_name }}">
+  </div>
+  <div class="col-md-16">
+    <label for="validationCustom02" class="form-label">Middle name</label>
+    <input type="text" class="form-control" id="validationCustom02" name="middle_name" value="{{ middle_name }}">
+  </div>
+  <div class="col-md-16">
+    <label for="validationCustom03" class="form-label">Last name</label>
+    <input type="text" class="form-control" id="validationCustom03" name="last_name" value="{{ last_name }}">
+  </div>
+  <div class="col-md-16">
+    <label for="validationCustomUsername" class="form-label">Username</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <input type="text" class="form-control" id="validationCustomUsername" name="username"
+        aria-describedby="inputGroupPrepend" value="{{ username }}">
+    </div>
+  </div>
+  <div class="col-md-16">
+    <label for="validationCustom04" class="form-label">Email</label>
+    <input type="email" class="form-control" id="validationCustom04" name="email" value="{{ email }}">
+  </div>
+
+  <div class="col-12 d-grid gap-2">
+    <button class="btn btn-success" type="submit">Save</button>
+    <a class="btn btn-warning" href="/change_password">Change Password</a>
+  </div>
+</form>
+
+{% endblock %}

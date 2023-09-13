@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block main %}
+
+<form action="/register" method="post" class="row g-3 needs-validation">
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">First name</label>
+    <input type="text" class="form-control" id="validationCustom01" name="first_name" placeholder="Required" required>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Middle name</label>
+    <input type="text" class="form-control" id="validationCustom02" name="middle_name" placeholder="Optional">
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom03" class="form-label">Last name</label>
+    <input type="text" class="form-control" id="validationCustom03" name="last_name" placeholder="Required" required>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustomUsername" class="form-label">Username</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <input type="text" class="form-control" id="validationCustomUsername" name="username"
+        aria-describedby="inputGroupPrepend" placeholder="Required" required>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom04" class="form-label">Email</label>
+    <input type="email" class="form-control" id="validationCustom04" name="email" placeholder="Required" required>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom05" class="form-label">Confirm Email</label>
+    <input type="email" class="form-control" id="validationCustom05" name="email_confirmation" placeholder="Required"
+      required>
+  </div>
+  <div class="col-md-6">
+    <label for="validationCustom06" class="form-label">Password</label>
+    <div class="input-group has-validation"><span class="input-group-text" id="inputGroupPrepend"><i class="far fa-eye"
+          id="togglePassword" style="cursor: pointer;"></i></span>
+      <input type="password" class="form-control" id="validationCustom06" name="password" placeholder="Required"
+        required>
+    </div>
+    <div id="passwordHelpBlock" class="form-text">
+      <strong>Your password must:</strong><br>
+      Use a minimum of 8 characters.<br>
+      Include at least 1 uppercase letter.<br>
+      Include at least 1 lowercase letter.<br>
+      Include special characters.<br>
+      Include numbers.<br><br>
+      <i>This ensures your password is strong and secure.</i>
+    </div>
+  </div>
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#validationCustom06');
+
+    togglePassword.addEventListener('click', function (e) {
+      // toggle the type attribute
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      // toggle the eye slash icon
+      this.classList.toggle('fa-eye-slash');
+    });
+  </script>
+  <div class="col-md-6">
+    <label for="validationCustom07" class="form-label">Confirm Password</label>
+    <div class="input-group has-validation"><span class="input-group-text" id="inputGroupPrepend"><i class="far fa-eye"
+          id="togglePasswordConfirmation" style="cursor: pointer;"></i></span>
+      <input type="password" class="form-control" id="validationCustom07" name="password_confirmation"
+        placeholder="Required" required>
+    </div>
+  </div>
+  <script>
+    const togglePasswordConfirmation = document.querySelector('#togglePasswordConfirmation');
+    const passwordConfirmation = document.querySelector('#validationCustom07');
+
+    togglePasswordConfirmation.addEventListener('click', function (e) {
+      // toggle the type attribute
+      const type = passwordConfirmation.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordConfirmation.setAttribute('type', type);
+      // toggle the eye slash icon
+      this.classList.toggle('fa-eye-slash');
+    });
+  </script>
+  <div class="col-12 d-grid gap-2">
+    <button class="btn btn-success" type="submit">Register</button>
+    <a class="btn btn-info" href="/login">I already have an account</a>
+  </div>
+</form>
+<script>
+  window.onload = () => {
+    const emailConfirmation = document.getElementById('validationCustom05');
+    emailConfirmation.onpaste = e => e.preventDefault();
+
+    const passwordConfirmation = document.getElementById('validationCustom07');
+    passwordConfirmation.onpaste = e => e.preventDefault();
+  }
+</script>
+{% endblock %}

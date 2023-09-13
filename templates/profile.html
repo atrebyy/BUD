@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block main %}
+
+<div class="col-md-16">
+  <label for="validationCustom01" class="form-label">First name</label>
+  <input type="text" class="form-control" id="validationCustom01" name="first_name" readonly disabled
+    class="form-control-plaintext" value="{{ first_name }}" style="cursor: not-allowed;">
+</div>
+<div class="col-md-16">
+  <label for="validationCustom02" class="form-label">Middle name</label>
+  <input type="text" class="form-control" id="validationCustom02" name="middle_name" readonly disabled
+    class="form-control-plaintext" value="{{ middle_name }}" style="cursor: not-allowed;">
+</div>
+<div class="col-md-16">
+  <label for="validationCustom03" class="form-label">Last name</label>
+  <input type="text" class="form-control" id="validationCustom03" name="last_name" readonly disabled
+    class="form-control-plaintext" value="{{ last_name }}" style="cursor: not-allowed;">
+</div>
+<div class="col-md-16">
+  <label for="validationCustomUsername" class="form-label">Username</label>
+  <div class="input-group has-validation">
+    <span class="input-group-text" id="inputGroupPrepend">@</span>
+    <input type="text" class="form-control" id="validationCustomUsername" name="username"
+      aria-describedby="inputGroupPrepend" readonly disabled class="form-control-plaintext" value="{{ username }}"
+      style="cursor: not-allowed;">
+  </div>
+</div>
+<div class="col-md-16">
+  <label for="validationCustom04" class="form-label">Email</label>
+  <input type="email" class="form-control" id="validationCustom04" name="email" readonly disabled
+    class="form-control-plaintext" value="{{ email }}" style="cursor: not-allowed;">
+</div>
+
+<div class="col-12 d-grid gap-2">
+  <br>
+  <a class="btn btn-info" href="/edit">Edit account</a>
+  <a class="btn btn-danger" href="/delete">Delete account</a>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+
+<form action="/login" method="post" class="row g-3 needs-validation">
+  <div class="col-md-4">
+    <label for="validationCustomUsername" class="form-label">Username</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <input type="text" class="form-control" id="validationCustomUsername" name="username"
+        aria-describedby="inputGroupPrepend" placeholder="Required" required>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <label for="validationCustom06" class="form-label">Password</label>
+    <div class="input-group has-validation"><span class="input-group-text" id="inputGroupPrepend"><i class="far fa-eye"
+          id="togglePassword" style="cursor: pointer;"></i></span>
+      <input type="password" class="form-control" id="validationCustom06" name="password" placeholder="Required"
+        required>
+    </div>
+  </div>
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#validationCustom06');
+
+    togglePassword.addEventListener('click', function (e) {
+      // toggle the type attribute
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      // toggle the eye slash icon
+      this.classList.toggle('fa-eye-slash');
+    });
+  </script>
+  <div class="col-12 d-grid gap-2">
+    <button class="btn btn-success" type="submit">Log in</button>
+    <a class="btn btn-info" href="/register">I do not have an account</a>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,86 @@
+a {
+  text-decoration: none;
+}
+
+.icon-linkk:hover i {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+.icon-linkk:not(:hover) i {
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.container {
+  overflow: auto;
+  max-height: 75vh;
+}
+
+.vertical-line {
+  border-left: 2px solid #ccc;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.dollar-sign {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-20px);
+  color: rgb(19, 235, 19);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover .dollar-sign {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-link {
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #031D44;
+  padding: 20px 0px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 5px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 50%;
+}

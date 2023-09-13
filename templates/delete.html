@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Delete Account
+{% endblock %}
+
+{% block main %}
+
+<form action="/delete" method="post" class="row g-3 needs-validation">
+  <div class="col-md-6">
+    <label for="validationCustom04" class="form-label">Email</label>
+    <input type="email" class="form-control" id="validationCustom04" name="email" placeholder="Required" required>
+  </div>
+  <div class="col-md-6">
+    <label for="validationCustom06" class="form-label">Password</label>
+    <div class="input-group has-validation"><span class="input-group-text" id="inputGroupPrepend"><i class="far fa-eye"
+          id="togglePassword" style="cursor: pointer;"></i></span>
+      <input type="password" class="form-control" id="validationCustom06" name="password" placeholder="Required"
+        required>
+    </div>
+  </div>
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#validationCustom06');
+
+    togglePassword.addEventListener('click', function (e) {
+      // toggle the type attribute
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      // toggle the eye slash icon
+      this.classList.toggle('fa-eye-slash');
+    });
+  </script>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="agree" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        <p class="text-danger">Deleting your account means permanent data loss and no future access. <span
+            class="text-danger-emphasis">Confirm to proceed.</span></p>
+      </label>
+    </div>
+  </div>
+  <div class="col-12 d-grid gap-2">
+    <button class="btn btn-danger" type="submit">Delete Account</button>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block main %}
+<div class="row">
+  <div class="col">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <h4 class="h4 text-success">ASSETS</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ASSET</th>
+                <th>AMOUNT</th>
+                <th>(DESCRIPTION)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for asset in assets %}
+              <tr>
+                <td>{{ asset['name'] }}</td>
+                <td>{{ usd(asset['amount']) }}</td>
+                <td>{{ asset['description'] }}</td>
+              </tr>
+              {% endfor %}
+              <tr>
+                <td></td>
+                <td></td>
+                <td>NET ASSETS</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>{{ usd(current_assets) }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+        </div>
+        <div class="col">
+          <h4 class="h4 text-danger">LIABILITIES</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>LIABILITY</th>
+                <th>AMOUNT</th>
+                <th>(DESCRIPTION)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for liability in liabilities %}
+              <tr>
+                <td>{{ liability['name'] }}</td>
+                <td>{{ usd(liability['amount']) }}</td>
+                <td>{{ liability['description'] }}</td>
+              </tr>
+              {% endfor %}
+              <tr>
+                <td></td>
+                <td></td>
+                <td>NET LIABILITIES</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>{{ usd(current_liabilities) }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+        </div>
+        <div class="col">
+          <h4 class="h4 text-warning">CASH</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>AMOUNT</th>
+                <th>TRANSACTION</th>
+                <th>(DESCRIPTION)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for cash in money %}
+              <tr>
+                <td>{{ usd(cash['amount']) }}</td>
+                <td>{{ cash['action'] }}</td>
+                <td>{{ cash['description'] }}</td>
+              </tr>
+              {% endfor %}
+              <tr>
+                <td>TOTAL INCOMES</td>
+                <td>TOTAL EXPENSES</td>
+                <td>NET CASH</td>
+              </tr>
+              <tr>
+                <td>{{ usd(total_incomes) }}</td>
+                <td>{{ usd(total_expenses) }}</td>
+                <td>{{ usd(current_cash) }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <hr>
+          <h4 class="h4 text-primary">NET WORTH | {{ usd(current_assets + current_cash - current_liabilities)
+            }}</h4>
+          <hr>
+          <br>
+          <br>
+          <form action="/dashboard" method="post">
+            <input type="submit" value="Clear" name="clear" class="col-md-12 btn btn-danger form-control">
+            <div class="col-24">
+              <div class="form-check">
+                <br>
+                <input class="form-check-input" type="checkbox" name="agree" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                  <p class="text-danger">I understand that all my equity will be cleared.</p>
+                </label>
+              </div>
+            </div>
+          </form>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <form action="/dashboard" method="post">
+      <select id="type" name="option" class="form-select" onchange="handleTypeChange()">
+        <option selected disabled>OPTION</option>
+        {% for option in options %}
+        <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <select id="transaction" name="transaction" class="form-select" style="display: none;">
+        <option selected disabled>ADD/REMOVE</option>
+        {% for transaction in transactions %}
+        <option value="{{ transaction }}">{{ transaction }}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <label for="name" id="name_label" class="form-label" style="display: none;">Name</label>
+      <input type="text" id="name" name="name" class="form-control" required placeholder="Required"
+        style="display: none;">
+      <select for="action" id="action" name="action" class="form-select" style="display: none;">
+        <option disabled selected>INCOME/EXPENSE</option>
+        {% for action in inorout %}
+        <option value="{{ action }}">{{ action }}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <label for="amount" class="form-label">AMOUNT</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="number" id="amount" name="amount" step="0.01" class="form-control" required placeholder="Required">
+      </div>
+      <br>
+      <label for="description" class="form-label">DESCRIPTION</label>
+      <input type="text" id="description" name="description" class="form-control" placeholder="Optional">
+      <br>
+      <input type="submit" value="Submit" class="col-md-12 btn btn-success">
+    </form>
+  </div>
+</div>
+{% endblock %}
