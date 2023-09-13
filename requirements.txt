@@ -38,7 +38,6 @@ SQLAlchemy==1.4.46
 sqlparse==0.4.4
 termcolor==2.3.0
 tzlocal==5.0.1
-unattended-upgrades==0.1
 urllib3==2.0.4
 wadllib==1.3.6
 Werkzeug==2.3.7
